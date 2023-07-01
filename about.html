@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>About Us - Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="navbar-white">
+    <a href="./index.html" class="logo">elenganza</a>
+    <ul class="navbar">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./new.html">New</a></li>
+      <li><a href="./clothing.html">Clothings</a></li>
+      <li><a href="./bags.html">Bags</a></li>
+      <li><a href="./about.html">About Us</a></li>
+    </ul>
+    <div class="header-icon">
+      <a href="#">
+        <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+    </div>
+    <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+    <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+  </header>
+
+  <div class="about-image">
+    <img src="./pics/undraw_web_shopping_re_owap.svg" alt="">
+  </div>
+  <!-- About Section -->
+  <div class="about-section">
+    <div class="inner-container">
+      <h1>About Us</h1>
+      <p class="text">
+        Welcome to Elenganza, your ultimate destination for fashion-forward individuals seeking the perfect 
+        blend of style, quality, and convenience. With a passion for fashion and a commitment to exceptional 
+        customer service, we strive to provide a curated selection of trendy clothing and stylish bags to 
+        elevate your wardrobe. Our handpicked collection showcases the latest trends, timeless classics, and 
+        unique designs sourced from trusted brands and emerging designers. Whether you're searching for that 
+        statement piece to turn heads or a versatile bag to complete your ensemble, we've got you covered. 
+        We understand the importance of effortless online shopping, which is why we prioritize a user-friendly 
+        interface, secure transactions, and prompt delivery. Experience the joy of discovering your personal 
+        style at Elenganza, where fashion meets convenience, and every purchase is a step towards expressing 
+        your individuality.
+      </p>
+      <div class="skills">
+        <span>Trendy Clothes & Bags</span>
+        <span>Great Quality</span>
+        <span>Fast Delivery</span>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Footer Section -->
+  <footer>
+        <div class="section-title">
+          <h2>Elenganza</h2>
+        </div>
+        <div class="footer-content">
+          <div class="footer-item">
+            <h3>customer</h3>
+            <a href="./index.html">home</a>
+            <a href="./new.html">new</a>
+            <a href="#sales">sales</a>
+            <a href="./terms.html">terms & conditions</a>
+            <a href="./privacy.html">privacy policy</a>
+          </div> <!-- end item 1-->
+          <div class="footer-item">
+            <h3>categories</h3>
+            <a href="./clothing.html">sets</a>
+            <a href="./clothing.html">shirts</a>
+            <a href="./clothing.html">dresses</a>
+            <a href="./clothing.html">tops</a>
+            <a href="./clothing.html">pants</a>
+            <a href="./clothing.html">coats</a>
+            <a href="./clothing.html">jackets</a>
+            <a href="./bags.html">bags</a>
+            <a href="./bags.html">backpacks</a>
+          </div> <!-- end item 2-->
+          <div class="footer-item">
+            <h3>About</h3>
+            <a href="./about.html">about us</a>
+            <p>contact@elenganza.com</p>
+          </div> <!-- end item 3-->
+        </div>
+        <div class="terms">
+          <small>Copyright © 2023 Elenganza</small>
+        </div>
+  </footer>
+
+  <script>
+    // ==================== NAVBAR ====================
+    const navItems = document.querySelector('.navbar');
+    const openNavBtn = document.querySelector('#open__nav-btn');
+    const closeNavBtn = document.querySelector('#close__nav-btn');
+    // open nav dropdown
+    const openNav = () => {
+      navItems.style.display = 'flex';
+      openNavBtn.style.display = 'none';
+      closeNavBtn.style.display = 'inline-block';
+    }
+    // close nav dropdown
+    const closeNav = () => {
+      navItems.style.display = 'none';
+      openNavBtn.style.display = 'inline-block';
+      closeNavBtn.style.display = 'none';
+    }
+    openNavBtn.addEventListener('click', openNav); //call the openNav function
+    closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+  </script>
+</body>
+</html>

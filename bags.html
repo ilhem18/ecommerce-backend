@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>Bags - Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="navbar-white">
+    <a href="./index.html" class="logo">elenganza</a>
+    <ul class="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./new.html">New</a></li>
+        <li><a href="./clothing.html">Clothings</a></li>
+        <li><a href="./bags.html">Bags</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+    <div class="header-icon">
+        <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+    </div>
+    <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+    <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+  </header>
+
+  <!-- category section -->
+  <section class="bags-categories">
+    <div class="bag-category-item" id="allbags">all</div> <!-- end item 1-->
+    <div class="bag-category-item" id="bags">bags</div> <!-- end item 2-->
+    <div class="bag-category-item" id="backbacks">backpacks</div> <!-- end item 3-->
+  </section>
+
+  <!-- category count -->
+  <section class="category-count">
+    <p>See: <span id="bagCategoryCount">6</span> items</p>
+  </section>
+
+  <section class="bags-items">
+    <div class="bags-item" data-category="bags">
+      <img src="./pics/bag1.jpg" alt="">
+      <div class="content-text">
+        <h5>Large Shoulder Bag in Multi-colored woven nappa leather</h5>
+        <p>670£ - <span>469£</span></p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+      <span class="sale-tag">30% Sale</span>
+    </div> <!--end item 1-->
+    <div class="bags-item" data-category="bags">
+      <img src="./pics/bag3.jpg" alt="">
+      <div class="content-text">
+        <h5>Marc Jacops Beige Tote Bag</h5>
+        <p>840£</p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+    </div> <!--end item 2-->
+    <div class="bags-item" data-category="bags">
+      <img src="./pics/bag4.jpg" alt="">
+      <div class="content-text">
+        <h5>Mini Grass Green Shoulder Bag</h5>
+        <p>340£</p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+    </div> <!--end item 3-->
+    <div class="bags-item" data-category="bags">
+      <img src="./pics/bag5.jpg" alt="">
+      <div class="content-text">
+        <h5>Baby Pink Mini Handbag</h5>
+        <p>590£</p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+      <span class="sale-tag">30% Sale</span>
+    </div>  <!--end item 4-->
+    <div class="bags-item" data-category="bags">
+      <img src="./pics/bag3.jpg" alt="">
+      <div class="content-text">
+        <h5>Marc Jacops Beige Tote Bag</h5>
+        <p>840£</p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+    </div> <!--end item 5-->
+    <div class="bags-item" data-category="backbacks">
+      <img src="./pics/bag6.webp" alt="">
+      <div class="content-text">
+        <h5>Back To School Blue Backpack</h5>
+        <p>290£</p>
+        <button class="btn"><a href="#">show more</a></button>
+      </div>
+    </div> <!--end item 6-->
+  </section>
+
+  <!--no items message-->
+  <section class="no-items-message">
+    <p>No items in stock for now</p>
+  </section>
+    
+  <!-- Footer Section -->
+  <footer>
+    <div class="section-title">
+      <h2>Elenganza</h2>
+    </div>
+    <div class="footer-content">
+      <div class="footer-item">
+        <h3>customer</h3>
+        <a href="./index.html">home</a>
+        <a href="./new.html">new</a>
+        <a href="#sales">sales</a>
+        <a href="./terms.html">terms & conditions</a>
+        <a href="./privacy.html">privacy policy</a>
+      </div> <!-- end item 1-->
+      <div class="footer-item">
+        <h3>categories</h3>
+        <a href="./clothing.html">sets</a>
+        <a href="./clothing.html">shirts</a>
+        <a href="./clothing.html">dresses</a>
+        <a href="./clothing.html">tops</a>
+        <a href="./clothing.html">pants</a>
+        <a href="./clothing.html">coats</a>
+        <a href="./clothing.html">jackets</a>
+        <a href="./bags.html">bags</a>
+        <a href="./bags.html">backpacks</a>
+      </div> <!-- end item 2-->
+      <div class="footer-item">
+        <h3>About</h3>
+        <a href="./about.html">about us</a>
+        <p>contact@elenganza.com</p>
+      </div> <!-- end item 3-->
+    </div>
+    <div class="terms">
+      <small>Copyright © 2023 Elenganza</small>
+    </div>
+  </footer>
+
+  <!-- javascript -->
+  <script>
+    // ==================== NAVBAR ====================
+    const navItems = document.querySelector('.navbar');
+    const openNavBtn = document.querySelector('#open__nav-btn');
+    const closeNavBtn = document.querySelector('#close__nav-btn');
+    // open nav dropdown
+    const openNav = () => {
+        navItems.style.display = 'flex';
+        openNavBtn.style.display = 'none';
+        closeNavBtn.style.display = 'inline-block';
+    }
+    // close nav dropdown
+    const closeNav = () => {
+        navItems.style.display = 'none';
+        openNavBtn.style.display = 'inline-block';
+        closeNavBtn.style.display = 'none';
+    }
+    openNavBtn.addEventListener('click', openNav); //call the openNav function
+    closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+// Get all the category items
+const bagCategoryItems = document.querySelectorAll('.bag-category-item');
+
+// Add click event listener to each category item
+bagCategoryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const bagCategory = item.id; // Get the category from the item's ID
+    filterBagsItems(bagCategory); // Call the filtering function with the selected category
+  });
+});
+function filterBagsItems(bagCategory) {
+  // Get all the bags items
+  const bagsItems = document.querySelectorAll('.bags-item');
+
+  // Show/hide bags items based on the selected category
+  let itemsFound = 0; // Counter for the number of items found
+
+  bagsItems.forEach(item => {
+    const itemCategory = item.dataset.category; // Get the item's category from the data-category attribute
+
+    if (bagCategory === 'allbags' || bagCategory === itemCategory) {
+      item.style.display = 'block'; // Show the item
+      itemsFound++; // Increment the counter
+    } else {
+      item.style.display = 'none'; // Hide the item
+    }
+  });
+
+  // Update the count element
+  const countElement = document.getElementById('bagCategoryCount');
+  countElement.textContent = itemsFound; // Update the count
+
+  // Show/hide the message element based on the availability of items
+  const messageElement = document.querySelector('.no-items-message');
+  if (itemsFound > 0) {
+    messageElement.style.display = 'none'; // Hide the message
+  } else {
+    messageElement.style.display = 'block'; // Show the message
+  }
+}
+
+  </script>
+</body>
+</html>

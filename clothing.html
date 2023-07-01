@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>Clothing - Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="navbar-white">
+    <a href="./index.html" class="logo">elenganza</a>
+    <ul class="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./new.html">New</a></li>
+        <li><a href="./clothing.html">Clothings</a></li>
+        <li><a href="./bags.html">Bags</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+    <div class="header-icon">
+        <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+    </div>
+    <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+    <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+  </header>
+
+    <!-- category section -->
+    <section class="clothing-categories">
+      <div class="category-item" id="all">all</div> <!-- end item 1-->
+      <div class="category-item" id="sets">sets</div> <!-- end item 2-->
+      <div class="category-item" id="shirts">shirts</div> <!-- end item 3-->
+      <div class="category-item" id="dresses">dresses</div> <!-- end item 4-->
+      <div class="category-item" id="tops">tops</div> <!-- end item 5-->
+      <div class="category-item" id="pants">pants</div> <!-- end item 6-->
+      <div class="category-item" id="coats">coats</div> <!-- end item 7-->
+      <div class="category-item" id="jackets">jackets</div> <!-- end item 8-->
+    </section>
+
+    <!-- category count -->
+    <section class="category-count">
+      <p>See: <span id="categoryCount">12</span> items</p>
+    </section>
+
+    <!-- clothing section -->
+    <section class="clothing-items">
+      <div class="clothing-item" data-category="sets">
+        <img src="./pics/clothing1.jpg" alt="sets" onmouseover="changeImage(this, './pics/clothing12.webp')" onmouseout="changeImage(this, './pics/clothing1.jpg')">
+        <div class="content-text">
+          <h5>Pink Shorts & Blazer Set</h5>
+          <p>600£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 1-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/clothing2.jpg" alt="sets" onmouseover="changeImage(this, './pics/clothing21.webp')" onmouseout="changeImage(this, './pics/clothing2.jpg')">
+        <div class="content-text">
+          <h5>Beige Wide-Leg Pants</h5>
+          <p>500£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 2-->
+      <div class="clothing-item" data-category="sets">
+        <img src="./pics/clothing3.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing31.webp')" onmouseout="changeImage(this, './pics/clothing3.webp')">
+        <div class="content-text">
+          <h5>Light Grey Pants & Jacket Set</h5>
+          <p>650£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 3-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/fea1.webp" onmouseover="changeImage(this, './pics/clothing41.jpg')" onmouseout="changeImage(this, './pics/fea1.webp')">
+        <div class="content-text">
+          <h5>High-Waisted Wide-Leg Pants</h5>
+          <p>5̶0̶0̶£ - <span>350£</span></p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+        <span class="sale-tag">30% Sale</span>
+      </div> <!--end item 4-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/fea3.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing51.webp')" onmouseout="changeImage(this, './pics/fea3.webp')">
+        <div class="content-text">
+          <h5>High-Waisted Wide-Leg Pants</h5>
+          <p>5̶0̶0̶£ - <span>350£</span></p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+        <span class="sale-tag">30% Sale</span>
+      </div> <!--end item 5-->
+      <div class="clothing-item" data-category="shirts">
+        <img src="./pics/fea4.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing61.webp')" onmouseout="changeImage(this, './pics/fea4.webp')">
+        <div class="content-text">
+          <h5>Oversized White Button-up shirt</h5>
+          <p>5̶0̶0̶£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 6-->
+      <div class="clothing-item" data-category="sets">
+        <img src="./pics/clothing1.jpg" alt="sets" onmouseover="changeImage(this, './pics/clothing12.webp')" onmouseout="changeImage(this, './pics/clothing1.jpg')">
+        <div class="content-text">
+          <h5>Pink Shorts & Blazer Set</h5>
+          <p>600£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 7-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/clothing2.jpg" alt="sets" onmouseover="changeImage(this, './pics/clothing21.webp')" onmouseout="changeImage(this, './pics/clothing2.jpg')">
+        <div class="content-text">
+          <h5>Beige Wide-Leg Pants</h5>
+          <p>500£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 8-->
+      <div class="clothing-item" data-category="sets">
+        <img src="./pics/clothing3.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing31.webp')" onmouseout="changeImage(this, './pics/clothing3.webp')">
+        <div class="content-text">
+          <h5>Light Grey Pants & Jacket Set</h5>
+          <p>650£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 9-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/fea1.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing41.jpg')" onmouseout="changeImage(this, './pics/fea1.webp')">
+        <div class="content-text">
+          <h5>High-Waisted Wide-Leg Pants</h5>
+          <p>5̶0̶0̶£ - <span>350£</span></p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+        <span class="sale-tag">30% Sale</span>
+      </div> <!--end item 10-->
+      <div class="clothing-item" data-category="pants">
+        <img src="./pics/fea3.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing51.webp')" onmouseout="changeImage(this, './pics/fea3.webp')">
+        <div class="content-text">
+          <h5>High-Waisted Wide-Leg Pants</h5>
+          <p>5̶0̶0̶£ - <span>350£</span></p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+        <span class="sale-tag">30% Sale</span>
+      </div> <!--end item 11-->
+      <div class="clothing-item" data-category="shirts">
+        <img src="./pics/fea4.webp" alt="sets" onmouseover="changeImage(this, './pics/clothing61.webp')" onmouseout="changeImage(this, './pics/fea4.webp')">
+        <div class="content-text">
+          <h5>Oversized White Button-up shirt</h5>
+          <p>5̶0̶0̶£</p>
+          <button class="btn"><a href="#">show more</a></button>
+        </div>
+      </div> <!--end item 12-->
+    </section>
+
+    <!--no items message-->
+    <section class="no-items-message">
+      <p>No items in stock for now</p>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="section-title">
+          <h2>Elenganza</h2>
+        </div>
+        <div class="footer-content">
+          <div class="footer-item">
+            <h3>customer</h3>
+            <a href="./index.html">home</a>
+            <a href="./new.html">new</a>
+            <a href="#sales">sales</a>
+            <a href="./terms.html">terms & conditions</a>
+            <a href="./privacy.html">privacy policy</a>
+          </div> <!-- end item 1-->
+          <div class="footer-item">
+            <h3>categories</h3>
+            <a href="./clothing.html">sets</a>
+            <a href="./clothing.html">shirts</a>
+            <a href="./clothing.html">dresses</a>
+            <a href="./clothing.html">tops</a>
+            <a href="./clothing.html">pants</a>
+            <a href="./clothing.html">coats</a>
+            <a href="./clothing.html">jackets</a>
+            <a href="./bags.html">bags</a>
+            <a href="./bags.html">backpacks</a>
+          </div> <!-- end item 2-->
+          <div class="footer-item">
+            <h3>About</h3>
+            <a href="./about.html">about us</a>
+            <p>contact@elenganza.com</p>
+          </div> <!-- end item 3-->
+        </div>
+        <div class="terms">
+          <small>Copyright © 2023 Elenganza</small>
+        </div>
+    </footer>
+
+    <!-- javascript -->
+    <script>
+    // ==================== NAVBAR ====================
+    const navItems = document.querySelector('.navbar');
+    const openNavBtn = document.querySelector('#open__nav-btn');
+    const closeNavBtn = document.querySelector('#close__nav-btn');
+    // open nav dropdown
+    const openNav = () => {
+        navItems.style.display = 'flex';
+        openNavBtn.style.display = 'none';
+        closeNavBtn.style.display = 'inline-block';
+    }
+    // close nav dropdown
+    const closeNav = () => {
+        navItems.style.display = 'none';
+        openNavBtn.style.display = 'inline-block';
+        closeNavBtn.style.display = 'none';
+    }
+    openNavBtn.addEventListener('click', openNav); //call the openNav function
+    closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+
+// Get all the category items
+const categoryItems = document.querySelectorAll('.category-item');
+
+// Add click event listener to each category item
+categoryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const category = item.id; // Get the category from the item's ID
+    filterClothingItems(category); // Call the filtering function with the selected category
+  });
+});
+function filterClothingItems(category) {
+  // Get all the clothing items
+  const clothingItems = document.querySelectorAll('.clothing-item');
+
+  // Show/hide clothing items based on the selected category
+  let itemsFound = 0; // Counter for the number of items found
+
+  clothingItems.forEach(item => {
+    const itemCategory = item.dataset.category; // Get the item's category from the data-category attribute
+
+    if (category === 'all' || category === itemCategory) {
+      item.style.display = 'block'; // Show the item
+      itemsFound++; // Increment the counter
+    } else {
+      item.style.display = 'none'; // Hide the item
+    }
+  });
+
+  // Update the count element
+  const countElement = document.getElementById('categoryCount');
+  countElement.textContent = itemsFound; // Update the count
+
+  // Show/hide the message element based on the availability of items
+  const messageElement = document.querySelector('.no-items-message');
+  if (itemsFound > 0) {
+    messageElement.style.display = 'none'; // Hide the message
+  } else {
+    messageElement.style.display = 'block'; // Show the message
+  }
+}
+
+
+
+
+
+
+      //changing pics
+      function changeImage(element, newSrc) {
+        element.src = newSrc;
+      }
+    </script>
+</body>
+</html>

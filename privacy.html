@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>Privacy Policy - Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="navbar-white">
+    <a href="./index.html" class="logo">elenganza</a>
+    <ul class="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./new.html">New</a></li>
+        <li><a href="./clothing.html">Clothings</a></li>
+        <li><a href="./bags.html">Bags</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+    <div class="header-icon">
+        <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+    </div>
+    <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+    <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+  </header>
+
+
+    <!-- Terms & conditions -->
+    <section class="terms-page" id="terms-page">
+        <div class="heading">
+            <a href="./index.html">Home</a>
+            <p>></p>
+            <p>Privacy Policy</p>
+        </div>
+        <div class="terms-container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+            </div>
+            <div class="terms-content">
+                <p>This Privacy Policy outlines how [Your Company Name] collects, uses, maintains, and protects the information you provide when using our website. We are committed to protecting your privacy and ensuring the security of your personal data. Please read this Privacy Policy carefully to understand how we handle your information.</p>
+                <h3>Information We Collect</h3>
+                <p>Personal Information: We may collect personal information from you when you voluntarily provide it to us during the registration, ordering, or contact process. This may include your name, email address, phone number, shipping address, and payment details.</p>
+                <p>Non-Personal Information: We may collect non-personal information about you, such as your IP address, browser type, referring website, and other technical information when you visit our website. This information is used for statistical purposes to analyze trends and improve our website's performance.</p>
+                <h3>Use of Information</h3>
+                <p>Personal Information: We use the personal information you provide to process your orders, deliver products, communicate with you, and provide customer support. We may also use this information to personalize your shopping experience, send promotional offers, and conduct market research, with your consent.</p>
+                <p>Non-Personal Information: Non-personal information is used for website analytics, performance monitoring, and improvement of our services. This information helps us understand how visitors use our website, identify trends, and enhance user experience.</p>
+                <h3>Data Protection and Security</h3>
+                <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include encryption, secure payment gateways, firewalls, and regular security assessments. However, no data transmission over the internet or electronic storage system can be guaranteed to be 100% secure.</p>
+                <p>We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+                <h3>Sharing of Information</h3>
+                <p>We do not sell, trade, or rent your personal information to third parties without your consent. However, we may share your information with trusted service providers who assist us in operating our website, conducting business activities, or servicing you, as long as they agree to keep your information confidential.</p>
+                <p>We may also disclose your personal information to comply with legal obligations, enforce our site policies, or protect our rights, property, or safety, as required or permitted by law.</p>
+                <h3>Your Rights and Choices</h3>
+                <p>You have the right to access, update, correct, and delete your personal information. You may also choose to opt out of receiving promotional communications from us.</p>
+                <p>To exercise your rights or make any requests regarding your personal information, please contact us using the information provided at the end of this Privacy Policy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="section-title">
+          <h2>Elenganza</h2>
+        </div>
+        <div class="footer-content">
+          <div class="footer-item">
+            <h3>customer</h3>
+            <a href="./index.html">home</a>
+            <a href="./new.html">new</a>
+            <a href="#sales">sales</a>
+            <a href="./terms.html">terms & conditions</a>
+            <a href="./privacy.html">privacy policy</a>
+          </div> <!-- end item 1-->
+          <div class="footer-item">
+            <h3>categories</h3>
+            <a href="./clothing.html">sets</a>
+            <a href="./clothing.html">shirts</a>
+            <a href="./clothing.html">dresses</a>
+            <a href="./clothing.html">tops</a>
+            <a href="./clothing.html">pants</a>
+            <a href="./clothing.html">coats</a>
+            <a href="./clothing.html">jackets</a>
+            <a href="./bags.html">bags</a>
+            <a href="./bags.html">backpacks</a>
+          </div> <!-- end item 2-->
+          <div class="footer-item">
+            <h3>About</h3>
+            <a href="./about.html">about us</a>
+            <p>contact@elenganza.com</p>
+          </div> <!-- end item 3-->
+        </div>
+        <div class="terms">
+          <small>Copyright © 2023 Elenganza</small>
+        </div>
+    </footer>
+
+    <script>
+      // ==================== NAVBAR ====================
+      const navItems = document.querySelector('.navbar');
+      const openNavBtn = document.querySelector('#open__nav-btn');
+      const closeNavBtn = document.querySelector('#close__nav-btn');
+      // open nav dropdown
+      const openNav = () => {
+          navItems.style.display = 'flex';
+          openNavBtn.style.display = 'none';
+          closeNavBtn.style.display = 'inline-block';
+      }
+      // close nav dropdown
+      const closeNav = () => {
+          navItems.style.display = 'none';
+          openNavBtn.style.display = 'inline-block';
+          closeNavBtn.style.display = 'none';
+      }
+      openNavBtn.addEventListener('click', openNav); //call the openNav function
+      closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+    </script>
+</body>
+</html>

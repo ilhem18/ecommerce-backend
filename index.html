@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="./index.html" class="logo">elenganza</a>
+        <ul class="navbar">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./new.html">New</a></li>
+            <li><a href="./clothing.html">Clothings</a></li>
+            <li><a href="./bags.html">Bags</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+        <div class="header-icon">
+            <a href="#">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+            <a href="./controllers/login.php">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+        <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+    </header>
+    <!-- Main Content Section -->
+    <main>
+        <!-- Home section -->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h1>New <br><span>Arrivals</span></h1>
+                <button class="btn"><a href="./new.html">shop here <span>!!!</span></a></button>
+            </div>
+        </section>
+        
+        <!-- Featured section -->
+        <section class="featured" id="featured">
+            <div class="section-title">
+              <h2>Featured Content</h2>
+              <p>See what is trending in our shop.</p>
+            </div>
+            <div class="wrapper">
+              <i class="fa-solid fa-arrow-left" id="left"></i>
+              <div class="carousel">
+                <div class="row">
+                  <img src="./pics/fea1.webp" alt="sets">
+                    <div class="content-text">
+                      <h5>High-Waisted Wide-Leg Pants</h5>
+                      <p>500£</p>
+                      <button class="btn"><a href="#">show more</a></button>
+                    </div>
+                    <span class="sale-tag">30% Sale</span>
+                </div> <!-- end item 1-->
+
+                <div class="row">
+                  <img src="./pics/fea2.webp" alt="sets">
+                    <div class="content-text">
+                      <h5>Short White Summer Dress</h5>
+                      <p>450£</p>
+                      <button class="btn"><a href="#">show more</a></button>
+                    </div>
+                </div> <!-- end item 2-->
+
+                <div class="row">
+                  <img src="./pics/fea3.webp" alt="sets">
+                    <div class="content-text">
+                      <h5>High-Waisted Stripped Pants</h5>
+                      <p>500£</p>
+                      <button class="btn"><a href="#">show more</a></button>
+                    </div>
+                    <span class="sale-tag">30% Sale</span>
+                </div> <!-- end item 3-->
+
+                <div class="row">
+                  <img src="./pics/fea4.webp" alt="sets">
+                    <div class="content-text">
+                      <h5>Blue Fitted Summer Top</h5>
+                      <p>250£</p>
+                      <button class="btn"><a href="#">show more</a></button>
+                    </div>
+                </div> <!-- end item 4-->
+
+                <div class="row">
+                  <img src="./pics/fea5.webp" alt="sets">
+                    <div class="content-text">
+                      <h5>Oversized White T-Shirt</h5>
+                      <p>300£</p>
+                      <button class="btn"><a href="#">show more</a></button>
+                    </div>
+                </div> <!-- end item 5-->
+              </div>
+              <i class="fa-solid fa-arrow-right" id="right"></i>
+            </div>
+            <div class="see-more">
+              <button class="page-btn"><span title="go to shop">go to shop</span></button>
+            </div>
+        </section> 
+
+        <!-- Featured Bags section-->
+        <section class="featured-bags" id="featured-bags">
+          <div class="section-title">
+            <h2>Bags & Backpacks</h2>
+            <p>Practical and Trendy Bags.</p>
+          </div>
+          <div class="bags-grid">
+            <div class="grid-item">
+              <img src="./pics/bag1.jpg" alt="">
+              <div class="content-text">
+                <h5>Large Shoulder Bag in Multi-colored woven nappa leather</h5>
+                <p>670£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 1-->
+
+            <div class="grid-item">
+              <img src="./pics/bag2.jpg" alt="">
+              <div class="content-text">
+                <h5>Orange Mini Handbag</h5>
+                <p>430£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+            </div> <!-- end item 2-->
+
+            <div class="grid-item">
+              <img src="./pics/bag3.jpg" alt="">
+              <div class="content-text">
+                <h5>Marc Jacops Beige Tote Bag</h5>
+                <p>840£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+            </div> <!-- end item 3-->
+
+            <div class="grid-item">
+              <img src="./pics/bag4.jpg" alt="">
+              <div class="content-text">
+                <h5>Mini Grass Green Shoulder Bag</h5>
+                <p>340£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+            </div> <!-- end item 4-->
+
+            <div class="grid-item">
+              <img src="./pics/bag5.jpg" alt="">
+              <div class="content-text">
+                <h5>Baby Pink Mini Handbag</h5>
+                <p>590£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 5-->
+
+            <div class="grid-item">
+              <img src="./pics/bag6.webp" alt="">
+              <div class="content-text">
+                <h5>Back To School Blue Backpack</h5>
+                <p>290£</p>
+                <button class="btn"><a href="#">show more</a></button>
+              </div>
+            </div> <!-- end item 6-->
+          </div>
+          <div class="see-more">
+            <button class="page-btn"><span title="go to shop">go to shop</span></button>
+          </div>
+        </section>
+
+        <!-- Categories section-->
+        <section class="categories">
+          <div class="section-title">
+            <h2>categories</h2>
+            <p>We offer a large and inclusive inventory for you to choose from.</p>
+          </div>
+          <div class="categories-container">
+            <div class="category" onclick="window.location.href='./clothing.html#sets'">
+              <img src="./pics/category1.webp" alt="">
+              <div>
+                <h2>Sets</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 1 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#shirts'">
+              <img src="./pics/category2.jpg" alt="">
+              <div>
+                <h2>Shirts</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 2 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#dresses'">
+              <img src="./pics/category3.webp" alt="">
+              <div>
+                <h2>dresses</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 3 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#tops'">
+              <img src="./pics/category4.jpg" alt="">
+              <div>
+                <h2>tops</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 4 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#pants'">
+              <img src="./pics/category5.webp" alt="">
+              <div>
+                <h2>pants</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 5 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#coats'">
+              <img src="./pics/category6.jpg" alt="">
+              <div>
+                <h2>coats</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 6 -->
+
+            <div class="category" onclick="window.location.href='./clothing.html#jackets'">
+              <img src="./pics/category7.jpg" alt="">
+              <div>
+                <h2>jackets</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 7 -->
+
+            <div class="category" onclick="window.location.href='./bags.html#bags'">
+              <img src="./pics/category8.jpg" alt="">
+              <div>
+                <h2>bags</h2>
+                <button class="btn-category">
+                  <span>view products<i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 8 -->
+
+            <div class="category" onclick="window.location.href='./bags.html#backpacks'">
+              <img src="./pics/category9.jpg" alt="">
+              <div>
+                <h2>Backpacks</h2>
+                <button class="btn-category">
+                  <span>view products<br/><i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+              </div>
+            </div> <!-- end item 9 -->
+          </div>
+        </section>
+
+        <!-- OnSale section-->
+        <section class="sales-section" id="sales">
+          <div class="section-title">
+            <h2>On Sale</h2>
+            <p>Unbeatable Deals Await! Dive into our On Sale Wonderland!</p>
+          </div>
+          <div class="onsale-content">
+            <div class="onsale-item">
+              <img src="./pics/fea3.webp" alt="">
+              <div class="content-text">
+                <h5>High-Waisted Wide-Leg Pants</h5>
+                <p>5̶0̶0̶£ - <span>350£</span></p>
+                <button class="sale-btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 1-->
+
+            <div class="onsale-item">
+              <img src="./pics/fea1.webp" alt="">
+              <div class="content-text">
+                <h5>High-Waisted Wide-Leg Pants</h5>
+                <p>5̶0̶0̶£ - <span>350£</span></p>
+                <button class="sale-btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 2-->
+
+            <div class="onsale-item">
+              <img src="./pics/sale1.jpg" alt="">
+              <div class="content-text">
+                <h5>Multi-colored woven nappa leather bag</h5>
+                <p>6̶7̶0̶£ - <span>455£</span></p>
+                <button class="sale-btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 3-->
+
+            <div class="onsale-item">
+              <img src="./pics/sale2.jpg" alt="">
+              <div class="content-text">
+                <h5>Baby Pink Mini Handbag</h5>
+                <p>5̶9̶0̶£ - <span>413£</span></p>
+                <button class="sale-btn"><a href="#">show more</a></button>
+              </div>
+              <span class="sale-tag">30% Sale</span>
+            </div> <!-- end item 3-->
+          </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="section-title">
+        <h2>Elenganza</h2>
+      </div>
+      <div class="footer-content">
+        <div class="footer-item">
+          <h3>customer</h3>
+          <a href="./index.html">home</a>
+          <a href="./new.html">new</a>
+          <a href="#sales">sales</a>
+          <a href="./terms.html">terms & conditions</a>
+          <a href="./privacy.html">privacy policy</a>
+        </div> <!-- end item 1-->
+        <div class="footer-item">
+          <h3>categories</h3>
+          <a href="./clothing.html">sets</a>
+          <a href="./clothing.html">shirts</a>
+          <a href="./clothing.html">dresses</a>
+          <a href="./clothing.html">tops</a>
+          <a href="./clothing.html">pants</a>
+          <a href="./clothing.html">coats</a>
+          <a href="./clothing.html">jackets</a>
+          <a href="./bags.html">bags</a>
+          <a href="./bags.html">backpacks</a>
+        </div> <!-- end item 2-->
+        <div class="footer-item">
+          <h3>About</h3>
+          <a href="./about.html">about us</a>
+          <p>contact@elenganza.com</p>
+        </div> <!-- end item 3-->
+      </div>
+      <div class="terms">
+        <small>Copyright © 2023 Elenganza</small>
+      </div>
+    </footer>
+
+    <script>
+      // ==================== NAVBAR ====================
+      const navItems = document.querySelector('.navbar');
+      const openNavBtn = document.querySelector('#open__nav-btn');
+      const closeNavBtn = document.querySelector('#close__nav-btn');
+      // open nav dropdown
+      const openNav = () => {
+          navItems.style.display = 'flex';
+          openNavBtn.style.display = 'none';
+          closeNavBtn.style.display = 'inline-block';
+      }
+      // close nav dropdown
+      const closeNav = () => {
+          navItems.style.display = 'none';
+          openNavBtn.style.display = 'inline-block';
+          closeNavBtn.style.display = 'none';
+      }
+      openNavBtn.addEventListener('click', openNav); //call the openNav function
+      closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+
+      // ==================== HOME SLIDESHOW ====================
+      const homeSection = document.querySelector('.home');
+      const images = [
+          './pics/homebg2.jpg',
+          './pics/homebg3.jpg'
+      ];
+      let currentImageIndex = 0;
+
+      function changeBackgroundImage() {
+        homeSection.classList.remove('fade-in');
+        setTimeout(() => {
+          homeSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
+          homeSection.classList.add('fade-in');
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+        }, 500);
+      }
+      homeSection.style.backgroundImage = `url(${images[0]})`; // Initial background image
+      setInterval(changeBackgroundImage, 5000); // Change background image every 5 seconds (5000 milliseconds)
+
+      // ==================== GIVE NAVBAR BACKGROUND IN SECOND SECTION ====================
+      const navbar = document.querySelector('header'); // Get the navbar element
+      const secondSection = document.querySelector('#featured'); // Get the position of the second section
+      const secondSectionTop = secondSection.offsetTop;
+      function checkScrollPosition() { // Function to check the scroll position and update the navbar class
+        if (window.pageYOffset >= secondSectionTop) {
+          navbar.classList.add('navbar-white');
+        } else {
+          navbar.classList.remove('navbar-white');
+        }
+      }
+      window.addEventListener('scroll', checkScrollPosition); // Add scroll event listener to check the scroll position
+      
+      // ==================== FEATURED CONTENT CAROUSEL ====================
+      const carousel = document.querySelector(".carousel"),
+      firstImg = carousel.querySelectorAll(".row")[0],
+      arrowIcons = document.querySelectorAll(".wrapper i");
+
+      let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+      const showHideIcons = () => {
+          // showing and hiding prev/next icon according to carousel scroll left value
+          let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+          arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+          arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+      }
+      arrowIcons.forEach(icon => {
+          icon.addEventListener("click", () => {
+              let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+              // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+              carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+              setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+          });
+      });
+
+      // ==================== SALE TAG TO SCROLL TO SALES SECTION ====================
+      var saleTags = document.getElementsByClassName('sale-tag'); // Get all elements with the sale-tag class
+      for (var i = 0; i < saleTags.length; i++) {// Loop through each sale-tag element
+        saleTags[i].addEventListener('click', function() {// Add click event listener to each sale-tag element
+          document.getElementById('sales').scrollIntoView({ behavior: 'smooth' }); // Scroll to the sales section
+        });
+      }
+
+    </script>
+
+
+
+
+</body>
+</html>

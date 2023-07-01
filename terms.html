@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <title>Terms & Conditions - Elenganza</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconscout cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="navbar-white">
+    <a href="./index.html" class="logo">elenganza</a>
+    <ul class="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./new.html">New</a></li>
+        <li><a href="./clothing.html">Clothings</a></li>
+        <li><a href="./bags.html">Bags</a></li>
+        <li><a href="./about.html">About Us</a></li>
+    </ul>
+    <div class="header-icon">
+        <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+    </div>
+    <button id="open__nav-btn"><i class="fa-solid fa-bars"></i></button>
+    <button id="close__nav-btn"><i class="fa-solid fa-xmark"></i></button>
+  </header>
+
+    <!-- Terms & conditions -->
+    <section class="terms-page" id="terms-page">
+        <div class="heading">
+            <a href="./index.html">Home</a>
+            <p>></p>
+            <p>Terms & conditions</p>
+        </div>
+        <div class="terms-container">
+            <div class="section-title">
+                <h2>Terms & Conditions</h2>
+            </div>
+            <div class="terms-content">
+                <p>Welcome to Elenganza, the online e-commerce platform. Please read these terms and conditions carefully before using our website. By accessing or using our website, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, then you may not access the website.</p>
+                <h3>Website Use</h3>
+                <p>The content on this website is for general information and use only. It is subject to change without notice.</p>
+                <p> Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness, or suitability of the information and materials found on this website. You acknowledge that such information and materials may contain inaccuracies or errors, and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</p>
+                <p>Your use of any information or materials on this website is entirely at your own risk. It is your responsibility to ensure that any products, services, or information available through this website meet your specific requirements.</p>
+                <p>This website contains material that is owned or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance, and graphics. Reproduction is prohibited unless explicitly authorized.</p>
+                <h3>Product Information</h3>
+                <p>We strive to provide accurate and up-to-date product information on our website. However, we do not warrant or guarantee the accuracy, completeness, reliability, or suitability of the product descriptions, images, pricing, or any other information related to the products.</p>
+                <p>Prices are subject to change without notice, and we reserve the right to modify or discontinue any product without prior notice.</p>
+                <p>We make every effort to display product colors accurately, but we cannot guarantee that your computer monitor's display of colors will be precise.</p>
+                <h3>Orders and Payment</h3>
+                <p>By placing an order through our website, you are offering to purchase products subject to these terms and conditions. All orders are subject to availability and acceptance by us.</p>
+                <p>Payment for the products and any applicable shipping fees must be made at the time of placing the order. We accept the payment methods indicated on our website.</p>
+                <h3>Shipping and Delivery</h3>
+                <p>We will make every effort to ensure that your order is delivered within the estimated timeframe. However, delivery dates are not guaranteed, and we are not responsible for any delays or non-delivery caused by unforeseen circumstances or third-party delivery services.</p>
+                <p>Risk of loss and title for products pass to you upon delivery of the items to the shipping carrier.</p>
+                <h3>Returns and Refunds</h3>
+                <p>Our returns and refunds policy is outlined separately on our website. Please refer to the designated page for detailed information on returning products and requesting refunds.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer>
+      <div class="section-title">
+        <h2>Elenganza</h2>
+      </div>
+      <div class="footer-content">
+        <div class="footer-item">
+          <h3>customer</h3>
+          <a href="./index.html">home</a>
+          <a href="./new.html">new</a>
+          <a href="#sales">sales</a>
+          <a href="./terms.html">terms & conditions</a>
+          <a href="./privacy.html">privacy policy</a>
+        </div> <!-- end item 1-->
+        <div class="footer-item">
+          <h3>categories</h3>
+          <a href="./clothing.html">sets</a>
+          <a href="./clothing.html">shirts</a>
+          <a href="./clothing.html">dresses</a>
+          <a href="./clothing.html">tops</a>
+          <a href="./clothing.html">pants</a>
+          <a href="./clothing.html">coats</a>
+          <a href="./clothing.html">jackets</a>
+          <a href="./bags.html">bags</a>
+          <a href="./bags.html">backpacks</a>
+        </div> <!-- end item 2-->
+        <div class="footer-item">
+          <h3>About</h3>
+          <a href="./about.html">about us</a>
+          <p>contact@elenganza.com</p>
+        </div> <!-- end item 3-->
+      </div>
+      <div class="terms">
+        <small>Copyright © 2023 Elenganza</small>
+      </div>
+  </footer>
+
+  <script>
+    // ==================== NAVBAR ====================
+    const navItems = document.querySelector('.navbar');
+    const openNavBtn = document.querySelector('#open__nav-btn');
+    const closeNavBtn = document.querySelector('#close__nav-btn');
+    // open nav dropdown
+    const openNav = () => {
+        navItems.style.display = 'flex';
+        openNavBtn.style.display = 'none';
+        closeNavBtn.style.display = 'inline-block';
+    }
+    // close nav dropdown
+    const closeNav = () => {
+        navItems.style.display = 'none';
+        openNavBtn.style.display = 'inline-block';
+        closeNavBtn.style.display = 'none';
+    }
+    openNavBtn.addEventListener('click', openNav); //call the openNav function
+    closeNavBtn.addEventListener('click', closeNav); //call the closeNav function
+  </script>
+</body>
+</html>
