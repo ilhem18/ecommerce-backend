@@ -5,10 +5,10 @@ require 'config.php';
 $name = $username = $password_1 = $password_2 = "";
 
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password_1 = mysqli_real_escape_string($con, $_POST['password_1']);
-    $password_2 = mysqli_real_escape_string($con, $_POST['password_2']);
+    $name = mysqli_real_escape_string($con, trim($_POST['name']));
+    $username = mysqli_real_escape_string($con, trim($_POST['username']));
+    $password_1 = mysqli_real_escape_string($con, trim($_POST['password_1']));
+    $password_2 = mysqli_real_escape_string($con, trim($_POST['password_2']));
 
     // Check if the passwords match
     if ($password_1 != $password_2) {
