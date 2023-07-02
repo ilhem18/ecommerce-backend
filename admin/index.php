@@ -1,8 +1,22 @@
+<?php
+
+session_start();
+// Check if user is not logged in
+if (isset($_SESSION['userID']) == "") {
+    // Redirect to the login page
+    header("Location: ../controllers/login.php");
+}
+if (isset($_POST['logout'])) {
+    session_destroy();
+    unset($_SESSION['userID']);
+    header("Location: ../controllers/login.php");
+  }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pics/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -124,6 +138,21 @@ a{
     .user-wrapper i{
         border-radius: 50%;
         margin-right: 1rem; 
+    }
+    .user-wrapper button{
+        padding: 10px;
+        display: flex;
+        position: relative;
+        background: #fff;
+        border: none;
+        outline: none;
+        font-size: 15px;
+    }
+    .user-wrapper button:hover{
+        font-size: 20px;
+        color: #fff;
+        background: red;
+        border-radius: 4px;
     }
     main{
         margin-top: 85px;
@@ -257,8 +286,11 @@ a{
                 <input type="search" placeholder="Search here" />
             </div>
             <div class="user-wrapper">
-                <a href=""><i class="fa-solid fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
                     <h4>Admin</h4>
+                    <form method="post">
+                        <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
+                    </form>
             </div>
         </header>
 

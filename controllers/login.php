@@ -6,30 +6,31 @@ if (isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
 
-
     $maxLoginAttempts = 3;
     $blockDuration = 5;
-
     $failedAttempts = 0;
     $lastFailedAttempt = null;
     $ipAddress = $_SERVER['REMOTE_ADDR'];
 
-    $stmt = $con->prepare("SELECT COUNT(*), MAX(timestamp) FROM login_attempts WHERE username = ? OR ip_address = ?");
-    if($stmt){
+    $stmt = $con->prepare("SELECT COUNT(*), UNIX_TIMESTAMP(MAX(timestamp)) FROM login_attempts WHERE username = ? AND ip_address = ?");
+    if ($stmt) {
         $stmt->bind_param('ss', $username, $ipAddress);
         $stmt->execute();
         $stmt->bind_result($failedAttempts, $lastFailedAttempt);
-        $stmt->fetch();
-        $stmt->close();
-    }
-    //check if the user or IP address is blocked
-    if($failedAttempts >= $maxLoginAttempts && $lastFailedAttempt !== null){
-        $blockTime = strtotime($lastFailedAttempt) + ($blockDuration * 60);
-        if(time() < $blockTime){
-            $remainingTime = ($blockTime - time()) / 60;
-            header("Location: login.php?error=Too many failed login attempts");
-            exit();
+
+        if ($stmt->fetch()) {
+            // Check if the user or IP address is blocked
+            if ($failedAttempts >= $maxLoginAttempts && $lastFailedAttempt !== null) {
+                $blockTime = $lastFailedAttempt + ($blockDuration * 60);
+                if (time() < $blockTime) {
+                    $remainingTime = round(($blockTime - time()) / 60);
+                    header("Location: login.php?error=Too many failed login attempts. Please try again after $remainingTime minutes.");
+                    exit();
+                }
+            }
         }
+
+        $stmt->close();
     }
 
     try {
@@ -42,7 +43,7 @@ if (isset($_POST['submit'])) {
             if ($stmt->num_rows > 0) {
                 $stmt->bind_result($userID, $name, $hashedPassword);
                 $stmt->fetch();
-               
+
                 // Verify password
                 if (password_verify($_POST['password'], $hashedPassword)) {
                     // Password is correct, set session variables or perform further actions
@@ -55,15 +56,16 @@ if (isset($_POST['submit'])) {
                 } else {
                     // Password is incorrect
 
-                    //store the username + ip_address
-                    $stmt = $con->prepare("INSERT INTO login_attempts (username, ip_address) VALUES (?, ?)");
-                    if($stmt){
-                        $stmt->bind_param('ss', $username, $ipAddress);
-                        $stmt->execute();
-                        $stmt->close();
+                    // Store the username + ip_address
+                    $insertStmt = $con->prepare("INSERT INTO login_attempts (username, ip_address) VALUES (?, ?)");
+                    if ($insertStmt) {
+                        $insertStmt->bind_param('ss', $username, $ipAddress);
+                        $insertStmt->execute();
+                        $insertStmt->close();
+                    }
+
                     header("Location: login.php?error=Invalid username or password");
                     exit();
-                    }
                 }
             } else {
                 // User does not exist
@@ -80,13 +82,14 @@ if (isset($_POST['submit'])) {
     }
     $con->close();
 }
+
 ?>
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./pics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pics/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Connexion</title>
     <style>
