@@ -6,6 +6,32 @@ if (isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
 
+
+    $maxLoginAttempts = 3;
+    $blockDuration = 5;
+
+    $failedAttempts = 0;
+    $lastFailedAttempt = null;
+    $ipAddress = $_SERVER['REMOTE_ADDR'];
+
+    $stmt = $con->prepare("SELECT COUNT(*), MAX(timestamp) FROM login_attempts WHERE username = ? OR ip_address = ?");
+    if($stmt){
+        $stmt->bind_param('ss', $username, $ipAddress);
+        $stmt->execute();
+        $stmt->bind_result($failedAttempts, $lastFailedAttempt);
+        $stmt->fetch();
+        $stmt->close();
+    }
+    //check if the user or IP address is blocked
+    if($failedAttempts >= $maxLoginAttempts && $lastFailedAttempt !== null){
+        $blockTime = strtotime($lastFailedAttempt) + ($blockDuration * 60);
+        if(time() < $blockTime){
+            $remainingTime = ($blockTime - time()) / 60;
+            header("Location: login.php?error=Too many failed login attempts");
+            exit();
+        }
+    }
+
     try {
         $stmt = $con->prepare("SELECT userID, name, password FROM users WHERE username = ?");
         if ($stmt) {
@@ -28,8 +54,16 @@ if (isset($_POST['submit'])) {
                     exit();
                 } else {
                     // Password is incorrect
+
+                    //store the username + ip_address
+                    $stmt = $con->prepare("INSERT INTO login_attempts (username, ip_address) VALUES (?, ?)");
+                    if($stmt){
+                        $stmt->bind_param('ss', $username, $ipAddress);
+                        $stmt->execute();
+                        $stmt->close();
                     header("Location: login.php?error=Invalid username or password");
                     exit();
+                    }
                 }
             } else {
                 // User does not exist
