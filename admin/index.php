@@ -192,6 +192,10 @@ a{
         position: relative;
         padding: 2rem;
     }
+    .customers{
+        position: relative;
+        padding: 8rem;
+    }
     .card-header h2{
         font-size: 40px;
         margin-bottom: 20px;
@@ -273,6 +277,7 @@ a{
         </div>
     </div>
     <section id="containers">
+        <!--main dashboard-->
     <div id="main" class="section main-content">
         <header>
             <h2>
@@ -293,10 +298,6 @@ a{
                     </form>
             </div>
         </header>
-
-
-
-
         <main>
             <div class="cards">
                 <div class="card-single">
@@ -451,10 +452,130 @@ a{
                 </div>
         </main>
     </div>
-    <div id="customers" class="section">Customers section</div>
-    <div id="orders" class="section">Orders section</div>
-    <div id="products" class="section">Products section</div>
-    <div id="accounts" class="section">Accounts section</div>
+
+
+
+    <!--customers dashboard-->
+    <div id="customers" class="section main-content">
+    <header>
+            <h2>
+                <label for="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <h4>Admin</h4>
+                    <form method="post">
+                        <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
+                    </form>
+            </div>
+        </header>
+        <div class="customers">
+        <div id="tableContainer" class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">ProductName</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+
+    <!--orders dashboard-->
+    <div id="orders" class="section main-content">
+    <header>
+            <h2>
+                <label for="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <h4>Admin</h4>
+                    <form method="post">
+                        <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
+                    </form>
+            </div>
+        </header>
+    </div>
+
+
+    <!--products dashboard-->
+    <div id="products" class="section main-content">
+    <header>
+            <h2>
+                <label for="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <h4>Admin</h4>
+                    <form method="post">
+                        <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
+                    </form>
+            </div>
+        </header>
+    </div>
+
+
+
+    <!--accounts dashboard-->
+    <div id="accounts" class="section main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <h4>Admin</h4>
+                    <form method="post">
+                        <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
+                    </form>
+            </div>
+        </header></div>
     </section>
 
 
