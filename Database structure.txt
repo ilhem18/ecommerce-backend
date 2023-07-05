@@ -1,0 +1,8 @@
+Article(articleID, name, price, stockAvai, Description, catID*, imgID*, sizeID*)
+categorie(categorieID, name)
+image(imgID, name)
+size(sizeID, name)
+user(userID, name, username, password)
+client(clientID, name, phone, adresse)
+purshace(purID, qte, typelivraison, ClientID*, articleID*)
+panier(panierID, clientID*, articleID*)
