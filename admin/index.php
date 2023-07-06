@@ -192,9 +192,9 @@ a{
         position: relative;
         padding: 2rem;
     }
-    .customers{
+    #orders .orders{
         position: relative;
-        padding: 8rem;
+        padding: 8rem 4rem;
     }
     .card-header h2{
         font-size: 40px;
@@ -332,24 +332,10 @@ a{
                 <div class="orders">
                         <div class="card-header">
                         <h2>Orders</h2>
-                                <ul id="myTabs" class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#all">All orders</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#completed">Completed</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#panding">Panding</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#canceled">Canceled</a>
-                                </li>
-                                </ul>
                         </div>
-                        <div id="tableContainer" class="card-body">
+                        <div class="card-body">
                             <!--all orders table-->
-                        <table id="all" class="table">
+                        <table class="table">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
@@ -364,81 +350,6 @@ a{
                             <tbody>
                                 <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!--completed orders table-->
-                        <table id="completed" class="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">OrderID</th>
-                                <th scope="col">ProductName</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!--panding orders table-->
-                        <table id="panding" class="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">OrderID</th>
-                                <th scope="col">ProductName</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!--canceled orders table-->
-                        <table id="canceled" class="table">
-                            <thead>
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">OrderID</th>
-                                <th scope="col">ProductName</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">4</th>
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
@@ -476,34 +387,7 @@ a{
                     </form>
             </div>
         </header>
-        <div class="customers">
-        <div id="tableContainer" class="card-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">OrderID</th>
-                    <th scope="col">ProductName</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
-        </div>
+
     </div>
 
     <!--orders dashboard-->
@@ -526,7 +410,128 @@ a{
                         <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
                     </form>
             </div>
-        </header>
+    </header>
+    <div class="orders">
+        <div class="card-header">
+            <h2>Orders</h2>
+            <ul id="myTabs" class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#all">All orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#completed">Completed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#panding">Panding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#canceled">Canceled</a>
+                </li>
+            </ul>
+        </div>
+        <div id="tableContainer" class="card-body">
+        <!--all orders table-->
+        <table id="all" class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">OrderID</th>
+                <th scope="col">ProductName</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+            <!--completed orders table-->
+            <table id="completed" class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">OrderID</th>
+                <th scope="col">ProductName</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">2</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+            </tbody>
+            </table>
+            <!--panding orders table-->
+            <table id="panding" class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">OrderID</th>
+                <th scope="col">ProductName</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">3</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <!--canceled orders table-->
+            <table id="canceled" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">ProductName</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 
@@ -551,6 +556,11 @@ a{
                     </form>
             </div>
         </header>
+        <div class="addproducts">
+            <div class="button">
+
+            </div>
+        </div>
     </div>
 
 
@@ -575,7 +585,8 @@ a{
                         <button type="submit" name="logout"><i class="fa-sharp fa-solid fa-right-from-bracket">Log Out</i></button>
                     </form>
             </div>
-        </header></div>
+        </header>
+    </div>
     </section>
 
 
@@ -595,9 +606,10 @@ a{
     </script>
 <script>
     $(document).ready(function() {
-        // Hide all tables except the first one initially
-        $('#tableContainer table:not(:first)').hide();
 
+        // Hide all tables except the first one initially
+        $('.section:not(:first) table').hide();
+        
         // Add click event handler to the tab links
         $('#myTabs a').click(function(e) {
             e.preventDefault(); // Prevent the default link behavior
