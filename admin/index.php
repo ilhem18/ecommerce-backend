@@ -464,10 +464,10 @@ a{
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -489,10 +489,10 @@ a{
             </thead>
             <tbody>
             <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -514,10 +514,10 @@ a{
             </thead>
             <tbody>
             <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -539,10 +539,10 @@ a{
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -722,90 +722,93 @@ a{
 
           <div id="new" class="new-product">
             <p>ajouter un nouveau produit:</p>
-            <form>
+            <form action="functions.php" method="post">
             <div class="row">
                 <div class="col">
-                <input type="text" class="form-control" placeholder="Product's name">
+                <input type="text" class="form-control" id="pname" name="pname" placeholder="Product's name">
                 </div>
                 <div class="col">
-                <input type="text" class="form-control" placeholder="Product's price">
+                <input type="text" class="form-control" id="pprice" name="pprice" placeholder="Product's price">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                <input type="number" class="form-control" placeholder="Number in stock">
+                <input type="number" class="form-control" id="pstock" name="pstock" placeholder="Number in stock">
                 </div>
                 <div class="col">
                     
                     <label>Product's image</label>
-                    <input type="file" class="form-control-file" multiple>
+                    <input type="file" class="form-control-file" id="pimg" name="pimg" multiple>
                     
                 </div>
             </div>
             <div class="row">
             <div class="col">
                 <label for="sizeS">S:</label>
-                <input type="number" id="sizeS" class="form-control" name="productSizeS" min="0">
+                <input type="number" id="sizeS" class="form-control" name="sizeS" min="0">
             </div>
             <div class="col">
                 <label for="sizeM">M:</label>
-                <input type="number" id="sizeM" class="form-control" name="productSizeM" min="0">
+                <input type="number" id="sizeM" class="form-control" name="sizeM" min="0">
             </div>
             <div class="col">
                 <label for="sizeL">L:</label>
-                <input type="number" id="sizeL" class="form-control" name="productSizeL" min="0">
+                <input type="number" id="sizeL" class="form-control" name="sizeL" min="0">
             </div>
             <div class="col">
                 <label for="sizeXL">XL:</label>
-                <input type="number" id="sizeXL" class="form-control" name="productSizeXL" min="0">
+                <input type="number" id="sizeXL" class="form-control" name="sizeXL" min="0">
             </div>
             </div>
             <div class="row">
                 <div class="col">
                 <label>categories:</label>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="sets">
+                        <input type="checkbox" class="form-check-input" id="sets" name="sets">
                         <label class="form-check-label" for="sets">SETS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="jackets">
+                        <input type="checkbox" class="form-check-input" id="jackets" name="jackets">
                         <label class="form-check-label" for="jackets">JACKETS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="coats">
+                        <input type="checkbox" class="form-check-input" id="coats" name="coats">
                         <label class="form-check-label" for="coats">COATS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="pants">
+                        <input type="checkbox" class="form-check-input" id="pants" name="pants">
                         <label class="form-check-label" for="pants">PANTS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="tops">
+                        <input type="checkbox" class="form-check-input" id="tops" name="tops">
                         <label class="form-check-label" for="tops">TOPS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dresses">
+                        <input type="checkbox" class="form-check-input" id="dresses" name="dresses">
                         <label class="form-check-label" for="dresses">DRESSES</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="shirts">
+                        <input type="checkbox" class="form-check-input" id="shirts" name="shirts">
                         <label class="form-check-label" for="shirts">SHIRTS</label>
                     </div> 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="bags">
+                        <input type="checkbox" class="form-check-input" id="bags" name="bags">
                         <label class="form-check-label" for="bags">BAGS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="backpacks">
+                        <input type="checkbox" class="form-check-input" id="backpacks" name="backpacks">
                         <label class="form-check-label" for="backpacks">BACKPACKS</label>
                     </div>           
                 </div>
                 <div class="col">
                     <div class="form-group">
                     <label for="productDescription">Product description</label>
-                    <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                    <textarea class="form-control" id="productDescription" name="productDescription" rows="3"></textarea>
                     </div>
                 </div>
+            </div>
+            <div class="col">
+                <button type="submit" name="addproduct" class="btn btn-secondary">Add product</button>
             </div>
             </form>
           </div>
