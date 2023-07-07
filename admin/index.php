@@ -102,6 +102,7 @@ a{
         padding: 1rem 1.5rem;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         position: fixed;
+        background: #fff;
         left: 345px;
         width: calc(100% - 345px);
         top: 0;
@@ -277,71 +278,35 @@ a{
     .category:hover i{
     transform: translateX(5px);
     }
-    /*Add product Modal css */
-    .modal {
-    display: none; /* Hide the modal by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    .new-product{
+        position: relative;
+        padding: 2rem;
+        margin-top: 2rem;
+        background: var(--clr-lightergrey);
+        border: 3px solid var(--clr-main);
+        box-shadow: 1px 0px 0px 1px rgba(0, 0, 0, .7);
     }
-
-    /* Style the modal content */
-    .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    .new-product p{
+        padding:0 5px 20px 0px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
     }
-
-    /* Style the close button */
-    .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    .col{
+        margin-bottom: 1rem;
     }
-
-    .close:hover,
-    .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    .accounts{
+        position: relative;
+        padding: 7rem;
     }
-    /* Style the file input button */
-    #productImage {
-    display: none; /* Hide the default file input button */
+    .account-header p {
+        font-family: 'cinzel', serif;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--clr-main);
+        padding: 20px;
     }
-
-    .upload-btn-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    }
-
-    .btn {
-    border: 2px solid gray;
-    color: gray;
-    background-color: white;
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    }
-
-    .upload-btn-wrapper input[type=file] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    }
-
 
 
 
@@ -657,7 +622,7 @@ a{
         </header>
         <div class="product-body">
             <div class="addproducts">
-                <button type="button" id="addProductBtn">Add new product</button>
+                <button type="button"><a href="#new">Add new product</a></button>
             </div>
             <div class="title">
                 <h2>all products</h2>
@@ -753,6 +718,97 @@ a{
               </div>
             </div> <!-- end item 9 -->
           </div>
+
+
+          <div id="new" class="new-product">
+            <p>ajouter un nouveau produit:</p>
+            <form>
+            <div class="row">
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Product's name">
+                </div>
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Product's price">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <input type="number" class="form-control" placeholder="Number in stock">
+                </div>
+                <div class="col">
+                    
+                    <label>Product's image</label>
+                    <input type="file" class="form-control-file" multiple>
+                    
+                </div>
+            </div>
+            <div class="row">
+            <div class="col">
+                <label for="sizeS">S:</label>
+                <input type="number" id="sizeS" class="form-control" name="productSizeS" min="0">
+            </div>
+            <div class="col">
+                <label for="sizeM">M:</label>
+                <input type="number" id="sizeM" class="form-control" name="productSizeM" min="0">
+            </div>
+            <div class="col">
+                <label for="sizeL">L:</label>
+                <input type="number" id="sizeL" class="form-control" name="productSizeL" min="0">
+            </div>
+            <div class="col">
+                <label for="sizeXL">XL:</label>
+                <input type="number" id="sizeXL" class="form-control" name="productSizeXL" min="0">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <label>categories:</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="sets">
+                        <label class="form-check-label" for="sets">SETS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="jackets">
+                        <label class="form-check-label" for="jackets">JACKETS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="coats">
+                        <label class="form-check-label" for="coats">COATS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="pants">
+                        <label class="form-check-label" for="pants">PANTS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="tops">
+                        <label class="form-check-label" for="tops">TOPS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dresses">
+                        <label class="form-check-label" for="dresses">DRESSES</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="shirts">
+                        <label class="form-check-label" for="shirts">SHIRTS</label>
+                    </div> 
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="bags">
+                        <label class="form-check-label" for="bags">BAGS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="backpacks">
+                        <label class="form-check-label" for="backpacks">BACKPACKS</label>
+                    </div>           
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                    <label for="productDescription">Product description</label>
+                    <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            </form>
+          </div>
         </div>
     </div>
 
@@ -776,70 +832,34 @@ a{
                     </form>
             </div>
         </header>
+        <div class="accounts">
+            <div class="account-header">
+                <p>List of accounts</p>
+            </div>
+            <div class="account-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">name</th>
+                            <th scope="col">date inscription</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     </section>
 
-<!--Add Product Modal -->
-<div id="productModal" class="modal">
-  <div class="modal-content">
-    <!-- Modal content goes here -->
-    <span class="close">&times;</span>
-    <h2>Add New Product</h2>
-    <form id="addProductForm">
-      <label for="productName">Product Name:</label>
-      <input type="text" id="productName" required>
 
-      <label for="productPrice">Price:</label>
-      <input type="number" id="productPrice" required>
-
-      <label for="productCategory">Category:</label>
-      <input type="text" id="productCategory" required>
-
-      <label for="productStock">Number in Stock:</label>
-      <input type="number" id="productStock" required>
-
-      <label for="productSizes">Available Sizes:</label>
-      <input type="text" id="productSizes" required>
-
-      <label for="productImage">Image URL:</label>
-      <input type="file" id="productImage" accept="image/*" required>
-
-      <label for="productDescription">Description:</label>
-      <textarea id="productDescription" rows="4" required></textarea>
-
-      <input type="submit" value="Add Product">
-    </form>
-  </div>
-</div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--script to trigger the add product modal-->
-<script>
-    // Get the button element and modal
-var addProductBtn = document.getElementById("addProductBtn");
-var modal = document.getElementById("productModal");
-
-// When the button is clicked, display the modal
-addProductBtn.addEventListener("click", function() {
-  modal.style.display = "block";
-});
-
-// When the user clicks on the close button, hide the modal
-var closeButton = document.getElementsByClassName("close")[0];
-closeButton.addEventListener("click", function() {
-  modal.style.display = "none";
-});
-
-// When the user clicks anywhere outside of the modal, hide it
-window.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-</script>
-
-
-
 
 
     <script>
