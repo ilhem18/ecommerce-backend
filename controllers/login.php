@@ -3,8 +3,8 @@ session_start();
 require 'config.php';
 
 if (isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($con, trim($_POST['username']));
-    $password = mysqli_real_escape_string($con, trim($_POST['password']));
+    $username = trim($_POST['username']);
+    $password =trim($_POST['password']);
 
     $maxLoginAttempts = 3;
     $blockDuration = 5;
@@ -12,13 +12,17 @@ if (isset($_POST['submit'])) {
     $lastFailedAttempt = null;
     $ipAddress = $_SERVER['REMOTE_ADDR'];
 
-    $stmt = $con->prepare("SELECT COUNT(*), UNIX_TIMESTAMP(MAX(timestamp)) FROM login_attempts WHERE username = ? AND ip_address = ?");
+    $stmt = $con->prepare("SELECT COUNT(*), UNIX_TIMESTAMP(MAX(timestamp)) FROM login_attempts WHERE username = :username AND ip_address = :ipaddress");
     if ($stmt) {
-        $stmt->bind_param('ss', $username, $ipAddress);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':ipaddress', $ipAddress);
         $stmt->execute();
-        $stmt->bind_result($failedAttempts, $lastFailedAttempt);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
 
-        if ($stmt->fetch()) {
+        if ($result) {
+            $failedAttempts = $result['COUNT(*)'];
+            $lastFailedAttempt = $result['UNIX_TIMESTAMP(MAX(timestamp))'];
             // Check if the user or IP address is blocked
             if ($failedAttempts >= $maxLoginAttempts && $lastFailedAttempt !== null) {
                 $blockTime = $lastFailedAttempt + ($blockDuration * 60);
@@ -30,52 +34,54 @@ if (isset($_POST['submit'])) {
             }
         }
 
-        $stmt->close();
+        $stmt = null;
     }
 
     try {
-        $stmt = $con->prepare("SELECT userID, name, password FROM users WHERE username = ?");
-        if ($stmt) {
-            $stmt->bind_param('s', $username);
-            $stmt->execute();
-            $stmt->store_result();
+        $stmt =$con->prepare("SELECT userID, name, password FROM users WHERE username = :username");
+if ($stmt) {
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
 
-            if ($stmt->num_rows > 0) {
-                $stmt->bind_result($userID, $name, $hashedPassword);
-                $stmt->fetch();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // Verify password
-                if (password_verify($_POST['password'], $hashedPassword)) {
-                    // Password is correct, set session variables or perform further actions
-                    $_SESSION['userID'] = $userID;
-                    $_SESSION['name'] = $name;
+    if ($result) {
+        $userID = $result['userID'];
+        $name = $result['name'];
+        $hashedPassword = $result['password'];
 
-                    // Redirect to the dashboard or desired page
-                    header("Location: ../admin/index.php");
-                    exit();
-                } else {
-                    // Password is incorrect
+        // Verify password
+        if (password_verify($_POST['password'], $hashedPassword)) {
+            // Password is correct, set session variables or perform further actions
+            $_SESSION['userID'] = $userID;
+            $_SESSION['name'] = $name;
 
-                    // Store the username + ip_address
-                    $insertStmt = $con->prepare("INSERT INTO login_attempts (username, ip_address) VALUES (?, ?)");
-                    if ($insertStmt) {
-                        $insertStmt->bind_param('ss', $username, $ipAddress);
-                        $insertStmt->execute();
-                        $insertStmt->close();
-                    }
-
-                    header("Location: login.php?error=Invalid username or password");
-                    exit();
-                }
-            } else {
-                // User does not exist
-                header("Location: login.php?error=Invalid username or password");
-                exit();
-            }
-            $stmt->close();
+            // Redirect to the dashboard or desired page
+            header("Location: ../admin/index.php");
+            exit();
         } else {
-            throw new Exception("Failed to prepare SELECT statement.");
+            // Password is incorrect
+
+            // Store the username + ip_address
+            $insertStmt =$con->prepare("INSERT INTO login_attempts (username, ip_address) VALUES (:username, :ipaddress)");
+            if ($insertStmt) {
+                $insertStmt->bindParam(':username', $username);
+                $insertStmt->bindParam(':ipaddress', $ipAddress);
+                $insertStmt->execute();
+            }
+
+            header("Location: login.php?error=Invalid username or password");
+            exit();
         }
+    } else {
+        // User does not exist
+        header("Location: login.php?error=Invalid username or password");
+        exit();
+    }
+} else {
+    throw new Exception("Failed to prepare SELECT statement.");
+}
+
     } catch (Exception $e) {
         // Display the detailed error message
         echo "Error: " . $e->getMessage();

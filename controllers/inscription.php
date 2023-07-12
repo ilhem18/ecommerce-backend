@@ -5,10 +5,10 @@ require 'config.php';
 $name = $username = $password_1 = $password_2 = "";
 
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($con, trim($_POST['name']));
-    $username = mysqli_real_escape_string($con, trim($_POST['username']));
-    $password_1 = mysqli_real_escape_string($con, trim($_POST['password_1']));
-    $password_2 = mysqli_real_escape_string($con, trim($_POST['password_2']));
+    $name = trim($_POST['name']);
+    $username = trim($_POST['username']);
+    $password_1 = trim($_POST['password_1']);
+    $password_2 = trim($_POST['password_2']);
 
     // Check if the passwords match
     if ($password_1 != $password_2) {
@@ -17,26 +17,28 @@ if (isset($_POST['submit'])) {
     }
 
     try {
-        $stmt = $con->prepare("SELECT userID, name, password FROM users WHERE username = ?");
+        $stmt = $con->prepare("SELECT userID, name, password FROM users WHERE username = :username");
         if ($stmt) {
-            $stmt->bind_param('s', $_POST['username']);
+            $stmt->bindParam(':username', $_POST['username']);
             $stmt->execute();
-            $stmt->store_result();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($stmt->num_rows > 0) {
+            if ($result > 0) {
                 header("Location: inscription.php?error=username already exists!");
             } else {
-                $stmt = $con->prepare("INSERT INTO users(name, username, password) VALUES (?, ?, ?)");
+                $stmt = $con->prepare("INSERT INTO users(name, username, password) VALUES (:name, :username, :password)");
                 if ($stmt) {
                     $password = password_hash($_POST['password_1'], PASSWORD_BCRYPT);
-                    $stmt->bind_param('sss', $_POST['name'], $_POST['username'], $password);
+                    $stmt->bindParam(':name', $_POST['name']);
+                    $stmt->bindParam(':username', $_POST['username']);
+                    $stmt->bindParam(':password', $password);
                     $stmt->execute();
                     header("Location: login.php");
                 } else {
                     throw new Exception("Failed to prepare INSERT statement.");
                 }
             }
-            $stmt->close();
+            exit();
         } else {
             throw new Exception("Failed to prepare SELECT statement.");
         }
