@@ -738,11 +738,15 @@ a{
                 <div class="col">
                     
                     <label>Product's image</label>
-                    <input type="file" class="form-control-file" id="pimg" name="pimg" multiple>
+                    <input type="file" class="form-control-file" id="pimg" name="pimg[]" multiple>
                     
                 </div>
             </div>
             <div class="row">
+            <div class="col">
+                <label for="sizeS">XS:</label>
+                <input type="number" id="sizeS" class="form-control" name="sizeXS" min="0">
+            </div>
             <div class="col">
                 <label for="sizeS">S:</label>
                 <input type="number" id="sizeS" class="form-control" name="sizeS" min="0">
@@ -759,44 +763,52 @@ a{
                 <label for="sizeXL">XL:</label>
                 <input type="number" id="sizeXL" class="form-control" name="sizeXL" min="0">
             </div>
+            <div class="col">
+                <label for="sizeXL">2XL:</label>
+                <input type="number" id="sizeXL" class="form-control" name="sizeXXL" min="0">
+            </div>
+            <div class="col">
+                <label for="sizeXL">3XL:</label>
+                <input type="number" id="sizeXL" class="form-control" name="sizeXXXL" min="0">
+            </div>
             </div>
             <div class="row">
                 <div class="col">
                 <label>categories:</label>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="sets" name="sets">
+                        <input type="checkbox" class="form-check-input" value="sets" name="categorie[]">
                         <label class="form-check-label" for="sets">SETS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="jackets" name="jackets">
+                        <input type="checkbox" class="form-check-input" value="jackets" name="categorie[]">
                         <label class="form-check-label" for="jackets">JACKETS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="coats" name="coats">
+                        <input type="checkbox" class="form-check-input" value="coats" name="categorie[]">
                         <label class="form-check-label" for="coats">COATS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="pants" name="pants">
+                        <input type="checkbox" class="form-check-input" value="pants" name="categorie[]">
                         <label class="form-check-label" for="pants">PANTS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="tops" name="tops">
+                        <input type="checkbox" class="form-check-input" value="tops" name="categorie[]">
                         <label class="form-check-label" for="tops">TOPS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dresses" name="dresses">
+                        <input type="checkbox" class="form-check-input" value="dresses" name="categorie[]">
                         <label class="form-check-label" for="dresses">DRESSES</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="shirts" name="shirts">
+                        <input type="checkbox" class="form-check-input" value="shirts" name="categorie[]">
                         <label class="form-check-label" for="shirts">SHIRTS</label>
                     </div> 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="bags" name="bags">
+                        <input type="checkbox" class="form-check-input" value="bags" name="categorie[]">
                         <label class="form-check-label" for="bags">BAGS</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="backpacks" name="backpacks">
+                        <input type="checkbox" class="form-check-input" value="backpacks" name="categorie[]">
                         <label class="form-check-label" for="backpacks">BACKPACKS</label>
                     </div>           
                 </div>
