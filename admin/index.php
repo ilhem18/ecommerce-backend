@@ -738,7 +738,7 @@ a{
                 <div class="col">
                     
                     <label>Product's image</label>
-                    <input type="file" class="form-control-file" id="pimg" name="pimg[]" multiple>
+                    <input type="file" class="form-control-file" name="pimg[]" multiple>
                     
                 </div>
             </div>

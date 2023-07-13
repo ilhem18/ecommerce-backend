@@ -102,7 +102,7 @@ if(isset($_POST['addproduct'])){
     //the following code is not adding the images to the database
     if(isset($_FILES['pimg']) && !empty($_FILES['pimg']['name'][0])){
         //the target directory to store the uploaded images
-        $targetDir = "pics/";
+        $targetDir = "../pics/";
 
         //loop thro each uploaded file
         foreach($_FILES['pimg']['tmp_name'] as $key => $tmpName){
