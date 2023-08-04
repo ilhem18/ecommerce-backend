@@ -99,27 +99,57 @@ if(isset($_POST['addproduct'])){
        $stmtSize->execute();
     }
 
-    //the following code is not adding the images to the database
-    if(isset($_FILES['pimg']) && !empty($_FILES['pimg']['name'][0])){
-        //the target directory to store the uploaded images
-        $targetDir = "../pics/";
+    //code to upload product's images
+    if(isset($_FILES['pimg'])){
+    $targetDir = "../pics/";
+    $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'webp');
 
-        //loop thro each uploaded file
-        foreach($_FILES['pimg']['tmp_name'] as $key => $tmpName){
-            $filename = uniqid() . "_" . $_FILES['pimg']['name'][$key];
-            $destination = $targetDir . $filename;
+    $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = '';
+    $fileNames = array_filter($_FILES['pimg']['name']);
+    if(!empty($fileNames)){
+        foreach($_FILES['pimg']['name'] as $key => $val){
+            //file upload path
+            $fileName = $basename($_FILES['pimg']['name'][$key]);
+            $targetFilePath = $targetDir . $fileName;
 
-            move_uploaded_file($tmpName, $destination);
-
-            $insertImageQuery = "INSERT INTO image (imageURL, articleID) VALUES (:imageURL, :articleID)";
-            $stmtImage = $con->prepare($insertImageQuery);
-            $stmtImage->bindParam(':imageURL', $filename);
-            $stmtImage->bindParam(':articleID', $idArticle);
-            $stmtImage->execute();
-
+            //check wether file type is valid
+            $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+            if(in_array($fileType, $allowTypes)){
+                if(move_uploaded_file($_FILES["pimg"]["tmp_name"][$key], $targetFilePath)){
+                    //img db insert sql 
+                    $insertValuesSQL .= "('" .$fileName. "'),";
+                } else {
+                    $errorUpload .= $_FILES['pimg']['name'][$key]. '|';
+                }
+            } else {
+                $errorUploadType .= $_FILES['pimg']['name'][$key]. '|';
+            }
         }
-        echo "product uploaded successfully !";
+        //error message 
+        $errorUpload = !empty($errorUpload)?'Upload Error:' .trim($errorUpload, ' | '): '';
+        $errorUploadType = !empty($errorUploadType)?'File Type Error:' .trim($errorUploadType, ' | '): '';
+        $errorMsg = !empty($errorUpload)?'<br/>' .$errorUpload.'<br/>'.$errorUploadType:'<br/>'.$errorUploadType;
+
+        if(!empty($insertValuesSQL)){
+            $insertValuesSQL = trim($insertValuesSQL, ',');
+            //insert image file name into database
+            $inserImg = "INSERT INTO image(ImageURL, articleID) VALUES (:img, :articleID)";
+            $stmtIMG = $con->prepare($inserImg);
+            $stmtIMG->bindValue(':img', $insertValuesSQL, PDO::PARAM_LOB);
+            $stmtIMG->bindParam(':articleID', $idArticle);
+            $stmtIMG->execute();
+            $result = $stmtIMG->fetch(PDO::FETCH_ASSOC);
+            if($result){
+                $statusMsg = "Files are uploaded successfully." .$errorMsg;
+            } else {
+                $statusMsg = "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            $statusMsg = "Upload failed!" .$errorMsg;
+        }
+    } 
+} else {
+        $statusMsg = "please select a file to upload.";
     }
-    echo "ERROR: please provide your clients with images of your product";
 }
 ?>
